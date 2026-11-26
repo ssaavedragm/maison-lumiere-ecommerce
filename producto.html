@@ -20,6 +20,48 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c1917'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='18' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://picsum.photos">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://maison-lumiere.example/" },
+          { "@type": "ListItem", "position": 2, "name": "Camisas", "item": "https://maison-lumiere.example/catalogo.html?categoria=camisas" },
+          { "@type": "ListItem", "position": 3, "name": "Camisa de lino Riviera" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Camisa de lino Riviera",
+        "sku": "ML-CAM-0142",
+        "mpn": "ML-CAM-0142",
+        "image": [
+          "https://picsum.photos/seed/ml-01/900/1200",
+          "https://picsum.photos/seed/ml-01b/900/1200",
+          "https://picsum.photos/seed/ml-01c/900/1200"
+        ],
+        "description": "Camisa de 100 % lino europeo con corte regular y cuello italiano.",
+        "brand": { "@type": "Brand", "name": "Maison Lumière" },
+        "category": "Ropa > Camisas",
+        "material": "Lino",
+        "color": "Blanco",
+        "size": ["XS", "S", "M", "L", "XL"],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "86" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://maison-lumiere.example/producto.html",
+          "priceCurrency": "EUR",
+          "price": "79.00",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": { "@type": "Organization", "name": "Maison Lumière" }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="flex min-h-screen flex-col bg-cream font-sans text-ink antialiased">
 

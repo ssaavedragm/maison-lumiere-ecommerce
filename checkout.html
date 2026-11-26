@@ -189,6 +189,35 @@
             </fieldset>
           </fieldset>
 
+          <!-- PASO 3 -->
+          <fieldset id="paso-3" class="scroll-mt-40 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+            <legend class="sr-only">Paso 3: Pago con tarjeta</legend>
+            <h2 class="flex items-center gap-3 font-serif text-xl"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-bordeaux-light font-sans text-sm font-semibold text-bordeaux">3</span>Pago con tarjeta</h2>
+            <p class="mt-2 text-sm text-stone-500">Prototipo: no introduzcas datos reales. El formulario no procesa pagos.</p>
+            <div class="mt-6 grid gap-5 sm:grid-cols-4">
+              <div class="sm:col-span-4">
+                <label for="titular" class="form-label">Titular de la tarjeta</label>
+                <input id="titular" name="titular" type="text" autocomplete="cc-name" required class="form-input" placeholder="Como aparece en la tarjeta">
+              </div>
+              <div class="sm:col-span-4">
+                <label for="tarjeta" class="form-label">Número de tarjeta</label>
+                <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" autocomplete="cc-number" pattern="[0-9 ]{13,19}" maxlength="19" required class="form-input font-mono tracking-wider" placeholder="0000 0000 0000 0000">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="caducidad" class="form-label">Caducidad (MM/AA)</label>
+                <input id="caducidad" name="caducidad" type="text" inputmode="numeric" autocomplete="cc-exp" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" required class="form-input" placeholder="MM/AA">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="cvc" class="form-label">CVC</label>
+                <input id="cvc" name="cvc" type="text" inputmode="numeric" autocomplete="cc-csc" pattern="[0-9]{3,4}" maxlength="4" required class="form-input" placeholder="123">
+              </div>
+            </div>
+            <label class="mt-6 flex items-start gap-3 text-sm text-stone-600">
+              <input type="checkbox" name="terminos" required class="mt-0.5 h-4 w-4 accent-bordeaux">
+              <span>He leído y acepto los <a href="#" class="underline underline-offset-4 hover:text-bordeaux">términos y condiciones</a> y la <a href="#" class="underline underline-offset-4 hover:text-bordeaux">política de privacidad</a>.</span>
+            </label>
+            <button type="submit" class="btn-primary mt-8 w-full py-4">Pagar 496,80 €</button>
+          </fieldset>
         </form>
 
       </div>

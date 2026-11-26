@@ -19,6 +19,42 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c1917'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='18' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://picsum.photos">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ClothingStore",
+        "@id": "https://maison-lumiere.example/#store",
+        "name": "Maison Lumière",
+        "url": "https://maison-lumiere.example/",
+        "logo": "https://maison-lumiere.example/assets/img/logo.png",
+        "description": "Marca de moda francesa: camisas, pantalones, calzado y accesorios.",
+        "email": "contacto@maison-lumiere.example",
+        "telephone": "+33 1 23 45 67 89",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Rue du Faubourg",
+          "addressLocality": "París",
+          "postalCode": "75008",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://maison-lumiere.example/#website",
+        "url": "https://maison-lumiere.example/",
+        "name": "Maison Lumière",
+        "inLanguage": "es",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://maison-lumiere.example/catalogo.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="flex min-h-screen flex-col bg-cream font-sans text-ink antialiased">
 

@@ -33,7 +33,28 @@ python3 server.py   # http://localhost:3000
 
 ## Desarrollo
 
-Tailwind se compila a un CSS estático (`assets/css/styles.css`) para obtener mejor puntuación en PageSpeed que con el CDN.
+### ¿Por qué Tailwind compilado y no por CDN?
+
+Tailwind se puede cargar de dos formas:
+
+| | CDN (`<script src="https://cdn.tailwindcss.com">`) | Compilado (este proyecto) |
+|---|---|---|
+| Qué descarga el navegador | Un JavaScript que genera los estilos **en cada visita** | Un CSS ya generado y minificado |
+| Clases incluidas | Todo Tailwind, se usen o no | Solo las clases que aparecen en los `.html` |
+| Rendimiento | Más peso y trabajo en el navegador; baja la nota de PageSpeed | Ligero; **98 en PageSpeed (móvil)** |
+| Primera carga | La página puede verse un instante sin estilos | Los estilos se aplican desde el principio |
+| Uso recomendado | Solo para pruebas (Tailwind lo avisa en la consola) | Producción |
+
+Como el cliente pide buen rendimiento y SEO, y el enunciado exige al menos 80 puntos en PageSpeed, se eligió **compilar Tailwind**.
+Cada página carga el resultado como una hoja de estilos normal:
+
+```html
+<link rel="stylesheet" href="assets/css/styles.css">
+```
+
+**Cómo funciona:** `src/input.css` (estilos base) + `tailwind.config.js` (paleta y tipografías de la marca) → `npm run build` revisa los `.html` y genera `assets/css/styles.css` solo con las clases usadas.
+
+> ⚠️ Si añades o cambias clases en el HTML, vuelve a compilar (`npm run build`) o deja `npm run dev` abierto mientras trabajas. Si no, las clases nuevas no tendrán estilo.
 
 ```bash
 npm install

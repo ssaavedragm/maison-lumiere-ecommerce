@@ -19,6 +19,42 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c1917'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='18' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://picsum.photos">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ClothingStore",
+        "@id": "https://maison-lumiere.example/#store",
+        "name": "Maison Lumière",
+        "url": "https://maison-lumiere.example/",
+        "logo": "https://maison-lumiere.example/assets/img/logo.png",
+        "description": "Marca de moda francesa: camisas, pantalones, calzado y accesorios.",
+        "email": "contacto@maison-lumiere.example",
+        "telephone": "+33 1 23 45 67 89",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Rue du Faubourg",
+          "addressLocality": "París",
+          "postalCode": "75008",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://maison-lumiere.example/#website",
+        "url": "https://maison-lumiere.example/",
+        "name": "Maison Lumière",
+        "inLanguage": "es",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://maison-lumiere.example/catalogo.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="flex min-h-screen flex-col bg-cream font-sans text-ink antialiased">
 
@@ -78,6 +114,228 @@
   </header>
 
   <main id="main" class="flex-1">
+
+    <!-- ============ HERO ============ -->
+    <section aria-labelledby="hero-title" class="relative isolate overflow-hidden bg-ink text-white">
+      <img src="https://picsum.photos/seed/ml-hero/1600/900?grayscale" alt="Modelo con abrigo de lana de la colección Otoño–Invierno" width="1600" height="900" fetchpriority="high" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-50">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/70 to-transparent"></div>
+      <div class="container-page flex min-h-[70vh] flex-col justify-center py-20 sm:py-28">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-bordeaux-light">Colección Otoño–Invierno 2026</p>
+        <h1 id="hero-title" class="max-w-2xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">L'élégance parisienne, para cada día</h1>
+        <p class="mt-6 max-w-xl text-base text-stone-200 sm:text-lg">Tejidos nobles, cortes atemporales y fabricación responsable en talleres europeos. Descubre las piezas esenciales de la temporada.</p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="catalogo.html" class="btn-primary bg-white text-ink hover:bg-bordeaux hover:text-white">Ver la colección</a>
+          <a href="producto.html" class="btn-secondary border-white text-white hover:bg-white hover:text-ink">Pieza destacada</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NUEVOS LANZAMIENTOS ============ -->
+    <section aria-labelledby="new-title" class="container-page py-16">
+      <div class="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-bordeaux">Recién llegados</p>
+          <h2 id="new-title" class="section-title mt-1">Nuevos lanzamientos</h2>
+        </div>
+        <a href="catalogo.html?orden=novedades" class="shrink-0 text-sm font-medium underline underline-offset-4 hover:text-bordeaux">Ver todo</a>
+      </div>
+      <ul class="scroll-row -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0">
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-01/480/640?grayscale" alt="Camisa de lino Riviera en color blanco" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Camisa de lino Riviera</h3>
+              <p class="text-sm text-stone-500">Camisas</p>
+              <p class="mt-1 font-semibold">79,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-06/480/640?grayscale" alt="Pantalón sastre Opéra gris marengo" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Pantalón sastre Opéra</h3>
+              <p class="text-sm text-stone-500">Pantalones</p>
+              <p class="mt-1 font-semibold">110,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-08/480/640?grayscale" alt="Botín Chelsea Pigalle de ante marrón" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Botín Chelsea Pigalle</h3>
+              <p class="text-sm text-stone-500">Calzado</p>
+              <p class="mt-1 font-semibold">159,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-07/480/640?grayscale" alt="Bufanda de cachemira Lyon color camel" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Bufanda de cachemira Lyon</h3>
+              <p class="text-sm text-stone-500">Accesorios</p>
+              <p class="mt-1 font-semibold">89,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-13/480/640?grayscale" alt="Blusa de seda Rivoli color marfil" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Blusa de seda Rivoli</h3>
+              <p class="text-sm text-stone-500">Camisas</p>
+              <p class="mt-1 font-semibold">120,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-20/480/640?grayscale" alt="Zapato Derby Odéon de piel negra" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">Nuevo</span>
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Derby Odéon</h3>
+              <p class="text-sm text-stone-500">Calzado</p>
+              <p class="mt-1 font-semibold">139,00 €</p>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ BANNER DE CAMPAÑA ============ -->
+    <section aria-labelledby="campaign-title" class="container-page">
+      <div class="grid overflow-hidden rounded-2xl bg-bordeaux text-white md:grid-cols-2">
+        <div class="flex flex-col justify-center p-8 sm:p-12">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-bordeaux-light">Edición limitada</p>
+          <h2 id="campaign-title" class="mt-2 font-serif text-3xl sm:text-4xl">Cápsula Côte d'Azur</h2>
+          <p class="mt-4 text-stone-200">Lino orgánico y algodón ligero para escapadas de invierno al sol. Solo 300 unidades por diseño.</p>
+          <a href="catalogo.html" class="btn-primary mt-8 self-start bg-white text-ink hover:bg-ink hover:text-white">Descubrir</a>
+        </div>
+        <img src="https://picsum.photos/seed/ml-campaign/800/600?grayscale" alt="Prendas de lino de la cápsula Côte d'Azur" width="800" height="600" loading="lazy" class="h-64 w-full object-cover md:h-full">
+      </div>
+    </section>
+
+    <!-- ============ MÁS VENDIDOS ============ -->
+    <section aria-labelledby="best-title" class="container-page py-16">
+      <div class="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-bordeaux">Favoritos de la comunidad</p>
+          <h2 id="best-title" class="section-title mt-1">Más vendidos</h2>
+        </div>
+        <a href="catalogo.html?orden=populares" class="shrink-0 text-sm font-medium underline underline-offset-4 hover:text-bordeaux">Ver todo</a>
+      </div>
+      <ul class="scroll-row -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0">
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-02/480/640?grayscale" alt="Pantalón chino Saint-Germain beige" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Pantalón chino Saint-Germain</h3>
+              <p class="text-sm text-stone-500">Pantalones</p>
+              <p class="mt-1 font-semibold">95,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-03/480/640?grayscale" alt="Bolso de cuero Marais color coñac" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Bolso de cuero Marais</h3>
+              <p class="text-sm text-stone-500">Accesorios</p>
+              <p class="mt-1 font-semibold">145,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-04/480/640?grayscale" alt="Mocasín Montmartre de piel marrón" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Mocasín Montmartre</h3>
+              <p class="text-sm text-stone-500">Calzado</p>
+              <p class="mt-1 font-semibold">129,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-05/480/640?grayscale" alt="Camisa Oxford Bastille azul cielo" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Camisa Oxford Bastille</h3>
+              <p class="text-sm text-stone-500">Camisas</p>
+              <p class="mt-1 font-semibold">69,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-10/480/640?grayscale" alt="Vaquero recto Canal azul índigo" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Vaquero recto Canal</h3>
+              <p class="text-sm text-stone-500">Pantalones</p>
+              <p class="mt-1 font-semibold">99,00 €</p>
+            </a>
+          </article>
+        </li>
+        <li class="w-60 shrink-0 snap-start sm:w-64">
+          <article class="group">
+            <a href="producto.html">
+              <div class="aspect-[3/4] overflow-hidden rounded-xl bg-stone-200">
+                <img src="https://picsum.photos/seed/ml-15/480/640?grayscale" alt="Gafas de sol Côte d'Azur de acetato" width="480" height="640" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="mt-3 font-medium group-hover:text-bordeaux">Gafas de sol Côte d'Azur</h3>
+              <p class="text-sm text-stone-500">Accesorios</p>
+              <p class="mt-1 font-semibold">95,00 €</p>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ VENTAJAS ============ -->
+    <section aria-label="Ventajas de comprar en Maison Lumière" class="border-t border-stone-200 bg-white">
+      <ul class="container-page grid gap-8 py-12 text-center sm:grid-cols-3">
+        <li>
+          <h3 class="font-serif text-lg">Envío gratuito</h3>
+          <p class="mt-1 text-sm text-stone-500">En pedidos superiores a 100 € a toda la UE.</p>
+        </li>
+        <li>
+          <h3 class="font-serif text-lg">Devoluciones en 30 días</h3>
+          <p class="mt-1 text-sm text-stone-500">Sin preguntas y con etiqueta prepagada.</p>
+        </li>
+        <li>
+          <h3 class="font-serif text-lg">Pago seguro</h3>
+          <p class="mt-1 text-sm text-stone-500">Tarjeta, Apple Pay y transferencia cifrados.</p>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <!-- ============ FOOTER (compartido) ============ -->

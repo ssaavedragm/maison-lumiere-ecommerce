@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /carrito.html
+Disallow: /checkout.html
+
+Sitemap: https://maison-lumiere.example/sitemap.xml

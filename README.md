@@ -9,7 +9,7 @@ Prototipo visual y funcional de e-commerce para una marca de moda francesa (fict
 |---|---|---|
 | `index.html` | Home | Navbar (logo, búsqueda, cuenta), hero, Nuevos lanzamientos, Más vendidos, footer |
 | `catalogo.html` | Catálogo | Filtros por categoría y talla, rejilla 4×5 (20 productos) |
-| `producto.html` | Producto | 2 columnas (foto / info), talla, cantidad, "Agregar al carrito", materiales y uso recomendado |
+| `producto-*.html` (20 páginas) | Producto | Una página por producto (p. ej. `producto-camisa-de-lino-riviera.html`): 2 columnas (foto / info), talla, cantidad, "Agregar al carrito", materiales y uso recomendado |
 | `carrito.html` | Carrito | 3 productos de ejemplo, subtotal, IVA, total y botón "Comprar" |
 | `checkout.html` | Pago | 3 pasos: datos personales → dirección de entrega → pago con tarjeta |
 
@@ -24,7 +24,13 @@ La navbar y el footer son idénticos en todas las vistas, y todas las páginas e
 
 ## Ver el proyecto en local
 
-El proyecto usa el servidor de la plantilla [4GeeksAcademy/html-hello](https://github.com/4GeeksAcademy/html-hello):
+Son páginas HTML estáticas, así que basta con el servidor que ya trae Python (no hay que instalar nada):
+
+```bash
+python3 -m http.server 3000   # http://localhost:3000
+```
+
+También puedes usar el servidor de la plantilla [4GeeksAcademy/html-hello](https://github.com/4GeeksAcademy/html-hello), que necesita Flask:
 
 ```bash
 pip3 install flask

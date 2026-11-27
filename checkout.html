@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar compra | Maison Lumière</title>
+  <meta name="description" content="Completa tus datos personales, la dirección de entrega y el pago con tarjeta para finalizar tu pedido en Maison Lumière.">
+  <link rel="canonical" href="https://maison-lumiere.example/checkout.html">
+  <!-- Las páginas transaccionales no deben indexarse -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1c1917">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c1917'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='18' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://picsum.photos">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="flex min-h-screen flex-col bg-cream font-sans text-ink antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Saltar al contenido</a>
+
+  <!-- ============ NAVBAR (compartida) ============ -->
+  <header class="sticky top-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur">
+    <p class="bg-ink py-2 text-center text-xs tracking-wide text-white">Envío gratuito en pedidos superiores a 100 € · Devoluciones en 30 días</p>
+    <div class="container-page flex items-center gap-4 py-3">
+      <a href="index.html" class="shrink-0 font-serif text-xl tracking-[0.2em] sm:text-2xl" aria-label="Maison Lumière, ir al inicio">
+        MAISON <span class="text-bordeaux">LUMIÈRE</span>
+      </a>
+
+      <form action="catalogo.html" method="get" role="search" class="mx-auto hidden w-full max-w-md md:block">
+        <label for="search-desktop" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/></svg>
+          <input id="search-desktop" name="q" type="search" placeholder="Buscar camisas, calzado, accesorios…" class="w-full rounded-full border border-stone-300 bg-stone-50 py-2 pl-10 pr-4 text-sm focus:border-bordeaux focus:outline-none focus:ring-2 focus:ring-bordeaux/20">
+        </div>
+      </form>
+
+      <div class="ml-auto flex items-center gap-1 md:ml-0">
+        <details class="group relative">
+          <summary class="flex cursor-pointer list-none items-center gap-2 rounded-full p-2 hover:bg-stone-100" aria-label="Menú de cuenta de usuario">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.1a7.5 7.5 0 0 1 15 0A17.9 17.9 0 0 1 12 21.75c-2.68 0-5.22-.58-7.5-1.65Z"/></svg>
+            <span class="hidden text-sm font-medium lg:inline">Mi cuenta</span>
+          </summary>
+          <ul class="absolute right-0 mt-2 w-52 rounded-xl border border-stone-200 bg-white p-2 text-sm shadow-lg">
+            <li><a href="#" class="block rounded-lg px-3 py-2 hover:bg-stone-100">Iniciar sesión</a></li>
+            <li><a href="#" class="block rounded-lg px-3 py-2 hover:bg-stone-100">Crear cuenta</a></li>
+            <li><a href="#" class="block rounded-lg px-3 py-2 hover:bg-stone-100">Mis pedidos</a></li>
+            <li><a href="#" class="block rounded-lg px-3 py-2 hover:bg-stone-100">Lista de deseos</a></li>
+          </ul>
+        </details>
+        <a href="carrito.html" class="relative rounded-full p-2 hover:bg-stone-100" aria-label="Carrito, 3 productos">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.36-1.99 1.26 12c.07.67-.45 1.24-1.12 1.24H4.25a1.13 1.13 0 0 1-1.12-1.24l1.26-12A1.13 1.13 0 0 1 5.51 7.5h12.98c.58 0 1.06.43 1.12 1.01Z"/></svg>
+          <span class="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-bordeaux text-[10px] font-bold text-white">3</span>
+        </a>
+      </div>
+    </div>
+
+    <form action="catalogo.html" method="get" role="search" class="container-page pb-3 md:hidden">
+      <label for="search-mobile" class="sr-only">Buscar productos</label>
+      <input id="search-mobile" name="q" type="search" placeholder="Buscar productos…" class="w-full rounded-full border border-stone-300 bg-stone-50 px-4 py-2 text-sm focus:border-bordeaux focus:outline-none focus:ring-2 focus:ring-bordeaux/20">
+    </form>
+
+    <nav aria-label="Navegación principal" class="border-t border-stone-100">
+      <ul class="container-page scroll-row flex gap-6 overflow-x-auto sm:justify-center sm:gap-10">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+        <li><a href="catalogo.html?categoria=calzado" class="nav-link">Calzado</a></li>
+        <li><a href="catalogo.html?categoria=camisas" class="nav-link">Camisas</a></li>
+        <li><a href="catalogo.html?categoria=pantalones" class="nav-link">Pantalones</a></li>
+        <li><a href="catalogo.html?categoria=accesorios" class="nav-link">Accesorios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="main" class="flex-1">
+    <div class="container-page py-8 sm:py-12">
+      <nav aria-label="Ruta de navegación" class="text-sm text-stone-500">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="index.html" class="hover:text-bordeaux">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="carrito.html" class="hover:text-bordeaux">Carrito</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-ink">Pago</li>
+        </ol>
+      </nav>
+
+      <h1 class="mt-4 font-serif text-3xl sm:text-4xl">Finalizar compra</h1>
+
+      <!-- ============ INDICADOR DE PASOS ============ -->
+      <nav aria-label="Pasos del pago" class="mt-8">
+        <ol class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm">
+          <li>
+            <a href="#paso-1" class="flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-ink font-semibold text-white">1</span>
+              <span class="font-medium">Datos personales</span>
+            </a>
+          </li>
+          <li>
+            <a href="#paso-2" class="flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-ink font-semibold text-white">2</span>
+              <span class="font-medium">Dirección de entrega</span>
+            </a>
+          </li>
+          <li>
+            <a href="#paso-3" class="flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-ink font-semibold text-white">3</span>
+              <span class="font-medium">Pago con tarjeta</span>
+            </a>
+          </li>
+        </ol>
+        <div class="mt-4 h-1 rounded-full bg-stone-200" aria-hidden="true"><div class="h-1 w-full rounded-full bg-gradient-to-r from-ink to-bordeaux"></div></div>
+      </nav>
+
+      <div class="mt-10 grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
+        <form action="index.html" method="get" class="space-y-8">
+
+          <!-- PASO 1 -->
+          <fieldset id="paso-1" class="scroll-mt-40 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+            <legend class="sr-only">Paso 1: Datos personales</legend>
+            <h2 class="flex items-center gap-3 font-serif text-xl"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-bordeaux-light font-sans text-sm font-semibold text-bordeaux">1</span>Datos personales</h2>
+            <div class="mt-6 grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="nombre" class="form-label">Nombre</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="given-name" required class="form-input" placeholder="Camille">
+              </div>
+              <div>
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input id="apellidos" name="apellidos" type="text" autocomplete="family-name" required class="form-input" placeholder="Durand">
+              </div>
+              <div>
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input id="email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="camille@ejemplo.com">
+              </div>
+              <div>
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" required class="form-input" placeholder="+33 6 12 34 56 78">
+              </div>
+              <label class="flex items-start gap-3 text-sm text-stone-600 sm:col-span-2">
+                <input type="checkbox" name="newsletter" class="mt-0.5 h-4 w-4 rounded border-stone-300 accent-bordeaux">
+                Quiero recibir novedades y ofertas exclusivas por correo.
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- PASO 2 -->
+          <fieldset id="paso-2" class="scroll-mt-40 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+            <legend class="sr-only">Paso 2: Dirección de entrega</legend>
+            <h2 class="flex items-center gap-3 font-serif text-xl"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-bordeaux-light font-sans text-sm font-semibold text-bordeaux">2</span>Dirección de entrega</h2>
+            <div class="mt-6 grid gap-5 sm:grid-cols-6">
+              <div class="sm:col-span-6">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input id="direccion" name="direccion" type="text" autocomplete="address-line1" required class="form-input" placeholder="Calle y número">
+              </div>
+              <div class="sm:col-span-6">
+                <label for="direccion2" class="form-label">Piso, puerta… <span class="font-normal text-stone-400">(opcional)</span></label>
+                <input id="direccion2" name="direccion2" type="text" autocomplete="address-line2" class="form-input">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="cp" class="form-label">Código postal</label>
+                <input id="cp" name="cp" type="text" inputmode="numeric" autocomplete="postal-code" required class="form-input" placeholder="75008">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input id="ciudad" name="ciudad" type="text" autocomplete="address-level2" required class="form-input" placeholder="París">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="pais" class="form-label">País</label>
+                <select id="pais" name="pais" autocomplete="country" class="form-input">
+                  <option value="FR" selected>Francia</option>
+                  <option value="ES">España</option>
+                  <option value="BE">Bélgica</option>
+                  <option value="DE">Alemania</option>
+                  <option value="IT">Italia</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="mt-6">
+              <legend class="form-label">Método de envío</legend>
+              <div class="mt-2 grid gap-3 sm:grid-cols-2">
+                <label class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-stone-300 p-4 has-[:checked]:border-ink has-[:checked]:ring-1 has-[:checked]:ring-ink">
+                  <span class="flex items-center gap-3"><input type="radio" name="envio" value="estandar" checked class="accent-bordeaux"><span><span class="block text-sm font-medium">Estándar</span><span class="block text-xs text-stone-500">3–5 días laborables</span></span></span>
+                  <span class="text-sm font-semibold">Gratis</span>
+                </label>
+                <label class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-stone-300 p-4 has-[:checked]:border-ink has-[:checked]:ring-1 has-[:checked]:ring-ink">
+                  <span class="flex items-center gap-3"><input type="radio" name="envio" value="express" class="accent-bordeaux"><span><span class="block text-sm font-medium">Exprés</span><span class="block text-xs text-stone-500">24 h</span></span></span>
+                  <span class="text-sm font-semibold">9,90 €</span>
+                </label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <!-- PASO 3 -->
+          <fieldset id="paso-3" class="scroll-mt-40 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+            <legend class="sr-only">Paso 3: Pago con tarjeta</legend>
+            <h2 class="flex items-center gap-3 font-serif text-xl"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-bordeaux-light font-sans text-sm font-semibold text-bordeaux">3</span>Pago con tarjeta</h2>
+            <p class="mt-2 text-sm text-stone-500">Prototipo: no introduzcas datos reales. El formulario no procesa pagos.</p>
+            <div class="mt-6 grid gap-5 sm:grid-cols-4">
+              <div class="sm:col-span-4">
+                <label for="titular" class="form-label">Titular de la tarjeta</label>
+                <input id="titular" name="titular" type="text" autocomplete="cc-name" required class="form-input" placeholder="Como aparece en la tarjeta">
+              </div>
+              <div class="sm:col-span-4">
+                <label for="tarjeta" class="form-label">Número de tarjeta</label>
+                <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" autocomplete="cc-number" pattern="[0-9 ]{13,19}" maxlength="19" required class="form-input font-mono tracking-wider" placeholder="0000 0000 0000 0000">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="caducidad" class="form-label">Caducidad (MM/AA)</label>
+                <input id="caducidad" name="caducidad" type="text" inputmode="numeric" autocomplete="cc-exp" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" required class="form-input" placeholder="MM/AA">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="cvc" class="form-label">CVC</label>
+                <input id="cvc" name="cvc" type="text" inputmode="numeric" autocomplete="cc-csc" pattern="[0-9]{3,4}" maxlength="4" required class="form-input" placeholder="123">
+              </div>
+            </div>
+            <label class="mt-6 flex items-start gap-3 text-sm text-stone-600">
+              <input type="checkbox" name="terminos" required class="mt-0.5 h-4 w-4 accent-bordeaux">
+              <span>He leído y acepto los <a href="#" class="underline underline-offset-4 hover:text-bordeaux">términos y condiciones</a> y la <a href="#" class="underline underline-offset-4 hover:text-bordeaux">política de privacidad</a>.</span>
+            </label>
+            <button type="submit" class="btn-primary mt-8 w-full py-4">Pagar 496,80 €</button>
+          </fieldset>
+        </form>
+
+        <!-- ============ RESUMEN ============ -->
+        <aside aria-labelledby="summary-title" class="rounded-2xl border border-stone-200 bg-white p-6 lg:sticky lg:top-40">
+          <h2 id="summary-title" class="font-serif text-xl">Tu pedido</h2>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-center gap-4">
+              <img src="https://picsum.photos/seed/ml-01/112/148?grayscale" alt="Camisa de lino Riviera" width="56" height="74" loading="lazy" class="h-[74px] w-14 rounded-md object-cover">
+              <div class="flex-1 text-sm"><p class="font-medium">Camisa de lino Riviera</p><p class="text-stone-500">Talla M · x1</p></div>
+              <p class="text-sm font-semibold">79,00 €</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <img src="https://picsum.photos/seed/ml-02/112/148?grayscale" alt="Pantalón chino Saint-Germain" width="56" height="74" loading="lazy" class="h-[74px] w-14 rounded-md object-cover">
+              <div class="flex-1 text-sm"><p class="font-medium">Pantalón chino Saint-Germain</p><p class="text-stone-500">Talla 42 · x2</p></div>
+              <p class="text-sm font-semibold">190,00 €</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <img src="https://picsum.photos/seed/ml-03/112/148?grayscale" alt="Bolso de cuero Marais" width="56" height="74" loading="lazy" class="h-[74px] w-14 rounded-md object-cover">
+              <div class="flex-1 text-sm"><p class="font-medium">Bolso de cuero Marais</p><p class="text-stone-500">Talla única · x1</p></div>
+              <p class="text-sm font-semibold">145,00 €</p>
+            </li>
+          </ul>
+          <dl class="mt-6 space-y-3 border-t border-stone-200 pt-6 text-sm">
+            <div class="flex justify-between"><dt class="text-stone-600">Subtotal</dt><dd>414,00 €</dd></div>
+            <div class="flex justify-between"><dt class="text-stone-600">Envío</dt><dd class="text-green-700">Gratis</dd></div>
+            <div class="flex justify-between"><dt class="text-stone-600">Impuestos (IVA 20 %)</dt><dd>82,80 €</dd></div>
+            <div class="flex justify-between border-t border-stone-200 pt-4 text-lg font-semibold"><dt>Total</dt><dd>496,80 €</dd></div>
+          </dl>
+          <a href="carrito.html" class="mt-6 block text-center text-sm underline underline-offset-4 hover:text-bordeaux">Editar carrito</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="bg-ink text-white">
+    <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="index.html" class="font-serif text-xl tracking-[0.2em]">MAISON <span class="text-bordeaux-light">LUMIÈRE</span></a>
+        <p class="mt-4 max-w-xs text-sm text-stone-400">Moda francesa atemporal, diseñada en París desde 1987.</p>
+      </div>
+      <nav aria-labelledby="footer-cat">
+        <h2 id="footer-cat" class="text-xs font-semibold uppercase tracking-[0.2em]">Categorías</h2>
+        <ul class="mt-4 space-y-2">
+          <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+          <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+          <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+          <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-legal">
+        <h2 id="footer-legal" class="text-xs font-semibold uppercase tracking-[0.2em]">Legal</h2>
+        <ul class="mt-4 space-y-2">
+          <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+          <li><a href="#" class="footer-link">Política de privacidad</a></li>
+          <li><a href="#" class="footer-link">Sobre la marca</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-[0.2em]">Contacto</h2>
+        <address class="mt-4 space-y-2 text-sm not-italic text-stone-400">
+          <p>12 Rue du Faubourg, 75008 París, Francia</p>
+          <p><a href="tel:+33123456789" class="footer-link">+33 1 23 45 67 89</a></p>
+          <p><a href="mailto:contacto@maison-lumiere.example" class="footer-link">contacto@maison-lumiere.example</a></p>
+          <p>Lun–Sáb · 10:00–19:00</p>
+        </address>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <p class="container-page py-6 text-xs text-stone-400">© 2026 Maison Lumière. Prototipo con fines de demostración.</p>
+    </div>
+  </footer>
+</body>
+</html>
